@@ -1,0 +1,26 @@
+<!-- Navbar -->
+<app-home-nav></app-home-nav>
+
+<div class="back-img w-full h-screen">
+  <div class="p-1 flex font-mono mx-auto py-5">
+    <div class="mx-14 p-10 h-fit sm:mt-10 mt-32 rounded-3xl shadow-2xl shadow-neutral-950/50 backdrop-blur-3xl bg-black/40 w-fit">
+      <div class="text-5xl mb-2 text-sky-600">
+        <span>Let's <span class="text-green-600">MEET</span> and have some</span> <br />
+        <span class="text-green-600">CHIT-CHAT.</span>
+      </div>
+      <div class="text-xl xs:text-md mt-4 text-sky-200">
+        <span>Time for your meeting.</span> <br />
+        <span>Grab a cup of coffee and be ready...</span> <br />
+      </div>
+      <div class="mt-8 lg:gap-10 sm:gap-4">
+        <button class="btn btn-primary mr-4 px-5 hover:scale-110" (click)="loginAsAdmin()">
+          <span class="text-xl scale-125">LOGIN AS ADMIN</span>
+        </button>
+        <button class="btn btn-success ml-4 px-5 hover:scale-110" (click)="loginAsUser()">
+          <span class="text-xl scale-125">LOGIN AS CUSTOMER</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,8 @@
+.borders {
+    border-width: 2px;
+    border-color: rgb(68, 68, 68);
+}
+
+.borders {
+    border: 1px solid red;
+}

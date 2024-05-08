@@ -1,0 +1,43 @@
+<!-- Navbar -->
+<app-home-nav></app-home-nav>
+
+<div class="container justify-content-center my-16 font-mono bg-neutral-950/40 backdrop-blur-xl shadow-2xl shadow-slate-950/50 rounded-2xl py-8 ">
+  <h3 class="text-center text-white font-semibold">LOGIN</h3>
+  <div class="alert alert-danger text-center w-fit h-fit mx-auto" *ngIf="errorMessage">
+    <p class="text-red-600 font-mono">
+      Error: {{ errorMessage }}
+    </p>
+  </div>
+  <form
+    class="col-md-4 offset-md-4 my-8"
+  >
+    <div class="mb-3">
+      <label for="userId" class="form-label text-white">User ID:</label>
+      <input
+        type="number"
+        class="form-control"
+        name="userId"
+        id="userId"
+        required
+        [(ngModel)]="userId"
+        placeholder="Enter the userId here"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="Password" class="form-label text-white">Password:</label>
+      <input
+        type="password"
+        class="form-control"
+        name="password"
+        id="password"
+        required
+        [(ngModel)]="password"
+        placeholder="Enter password here"
+      />
+    </div>
+    <div class="mt-10 text-center">
+      <input type="button" value="Login" class="btn btn-success mr-2" (click)="goToUser()" />
+      <input type="reset" value="Reset" class="btn btn-danger ml-2" (click)="onClick()" />
+    </div>
+  </form>
+</div>

@@ -1,0 +1,6 @@
+.card {
+    box-shadow: 10px 8px 16px rgba(0, 0, 0, 0.3);
+    border: 2px rgb(170, 170, 170) groove;
+    border-radius: 15px;
+    background-image: linear-gradient(to bottom right, aliceblue, rgb(206, 218, 209));
+}

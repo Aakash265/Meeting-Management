@@ -1,0 +1,6 @@
+.back-img {
+    background-image: url('../../assets/images/meetingBg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}

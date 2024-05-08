@@ -1,0 +1,38 @@
+<nav class="w-full text-white py-2 bg-neutral-900">
+    <div class="py-1 sm:py-5 mr-8 xs:w-full xs:h-fit">
+      <ul
+        class="flex list-none justify-content-center sm:flex lg:gap-14 sm:gap-4 my-auto font-mono text-lg xs:text-xs"
+      >
+        <li class="hover:text-lime-600 hover:scale-110 cursor-pointer" (click)="goToView()">
+          VIEW
+        </li>
+        <li class="hover:text-lime-600 hover:scale-110 cursor-pointer">CONTACT US</li>
+        <li class="hover:text-lime-600 hover:scale-110 cursor-pointer" (click)="logout()">LOGOUT</li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container font-mono">
+    <h1 class="text-center font-semibold mt-8 mb-5 text-emerald-500">MY MEETINGS</h1>
+    <div class="alert alert-danger text-center" *ngIf="errorMessage">
+      <h4 class="text-red-600 font-mono">
+        {{ errorMessage }}
+      </h4>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-5" *ngFor="let meet of filteredList">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title font-semibold">Meeting ID : {{ meet.meetingId }}</h5>
+                  <p class="card-text">Meeting Start Date : {{ meet.meetingStartDate }}</p>
+                  <p class="card-text">Meeting End Date : {{ meet.meetingEndDate }}</p>
+                  <p class="card-text">Meeting Status : {{ meet.status }}</p>
+                  <p class="card-text">User ID : {{ meet.userId }}</p>
+                  <p class="card-text">User Status : {{ meet.userStatus }}</p>
+                  <button (click)="meetingStatus('Accept', meet)" [disabled]="disable(meet)" class="btn btn-success">Accept</button>
+                  <button (click)="meetingStatus('Deny', meet)" [disabled]="disable(meet)" class="btn btn-danger" style="margin-left: 10px;">Decline</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

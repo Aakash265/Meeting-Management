@@ -1,0 +1,33 @@
+<!-- Navbar -->
+<app-admin-nav></app-admin-nav>
+
+<div class="container font-mono">
+  <h1 class="text-center font-semibold mt-8 mb-5 text-emerald-500">
+    AVAILABLE MEETINGS
+  </h1>
+  <!-- Error Handelling -->
+  <div class="text-center alert alert-danger" *ngIf="errorMessage">
+    <h4 class="text-red-600">
+      {{ errorMessage }}
+    </h4>
+  </div>
+    <div class="row">
+        <div class="col-md-4 mb-5" *ngFor="let meet of meetings">
+            <div class="card">
+                <div class="card-body">
+                  <h2 class="card-title font-bold">Meeting ID : {{ meet.meetingId }}</h2>
+                  <p class="card-text text-lg">Meeting Start Date : {{ meet.meetingStartDate }}</p>
+                  <p class="card-text text-lg">Meeting End Date : {{ meet.meetingEndDate }}</p>
+                  <p class="card-text text-lg">Meeting Status : {{ meet.status }}</p>
+                  <p class="card-text text-lg">User ID : {{ meet.userId }}</p>
+                  <p class="card-text text-lg">User Status : {{ meet.userStatus }}</p>
+                  <button (click)="updateMeeting(meet)" class="btn btn-primary" [disabled]="disableIfCompleted(meet.status)">Update</button>
+                  <button (click)="deleteMeeting(meet.meetingId)" class="btn btn-danger ml-3">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 51057 66832 80053 71852 -->
